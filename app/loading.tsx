@@ -3,7 +3,7 @@ export default function Loading() {
     <div className="container mx-auto p-6">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800">Latest Products</h1>
-        <p className="text-gray-500 mt-2">Explore our newest articles and insights</p>
+        <p className="text-gray-500 mt-2">Explore our newest Products 🚀</p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
