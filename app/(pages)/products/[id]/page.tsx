@@ -57,6 +57,7 @@ export default async function ProductPage({ params }: ParamsType) {
               key={img}
               src={img}
               alt={data.title}
+              loading="lazy"
               className="w-32 h-32 object-cover rounded-lg border border-white"
             />
           ))}

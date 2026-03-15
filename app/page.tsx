@@ -16,13 +16,14 @@ export default async function Home() {
     <main>
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-black">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-black dark:text-white mb-6 leading-tight">
-          Build Modern Apps With
-          <span className="block text-blue-600 dark:text-white">Next.js & Tailwind</span>
+        <h1 className="text-4xl md:text-8xl font-extrabold text-black dark:text-white mb-6 leading-tight">
+          Shop Smarter, Buy Faster
+          <span className="block text-sky-600 dark:text-white">with ShopMart</span>
         </h1>
 
-        <p className="text-gray-800 dark:text-gray-300 max-w-2xl text-lg mb-10">
-          A modern blog project demonstrating dynamic routing, server components and responsive UI.
+        <p className="text-gray-800 dark:text-gray-300 max-w-5xl text-lg mb-10">
+          Explore a modern e-commerce platform with seamless shopping, dynamic product listings, and
+          a fully responsive design.
         </p>
 
         <div className="flex flex-col gap-4 md:flex-row">
@@ -83,7 +84,7 @@ export default async function Home() {
             {data.products.map((product: Product) => (
               <div
                 key={product.id}
-                className="bg-white dark:bg-black p-6 rounded-xl shadow hover:shadow-xl transition flex flex-col"
+                className="bg-white dark:bg-black p-6 rounded-xl shadow hover:shadow-xl transition flex flex-col border border-black dark:border-white"
               >
                 <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">
                   {product.title}
@@ -94,6 +95,7 @@ export default async function Home() {
                   className="w-full h-48 object-cover rounded-lg mb-4"
                   width={500}
                   height={500}
+                  loading="lazy"
                 />
 
                 <p className="text-gray-800 dark:text-gray-300 text-sm mb-6 line-clamp-3">
