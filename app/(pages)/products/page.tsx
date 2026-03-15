@@ -11,38 +11,51 @@ export default async function ProductsPage() {
   const data = await res.json();
 
   return (
-    <main className="min-h-screen bg-gray-100 py-12">
+    <main className="min-h-screen bg-white dark:bg-black py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800">Latest Products</h1>
-          <p className="text-gray-500 mt-2">Explore our newest products</p>
+          <h1 className="text-4xl font-extrabold text-black dark:text-white">
+            Latest Products
+          </h1>
+          <p className="text-gray-700 dark:text-gray-300 mt-2">
+            Explore our newest products
+          </p>
         </div>
 
+        {/* Products Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {data.products.map((product: Product) => (
             <div
               key={product.id}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between group"
+              className="bg-white dark:bg-black rounded-2xl border border-black dark:border-white shadow-sm hover:shadow-lg transition duration-300 p-6 flex flex-col justify-between group"
             >
-              <span className="text-xs font-semibold bg-blue-100 text-blue-600 px-3 py-1 rounded-full w-fit mb-4">
+              {/* Product ID */}
+              <span className="text-xs font-semibold bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full w-fit mb-4">
                 Product #{product.id}
               </span>
 
+              {/* Product Image */}
               <img
                 src={product.images[0]}
                 alt={product.title}
-                className="w-full h-48 object-cover rounded-lg mb-6"
+                className="w-full h-48 object-cover rounded-lg mb-6 "
               />
 
-              <h2 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition">
+              {/* Product Title */}
+              <h2 className="text-xl font-semibold text-black dark:text-white mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition">
                 {product.title}
               </h2>
 
-              <p className="text-gray-600 text-sm mb-6 line-clamp-3">{product.description}</p>
+              {/* Product Description */}
+              <p className="text-gray-800 dark:text-gray-200 text-sm mb-6 line-clamp-3">
+                {product.description}
+              </p>
 
+              {/* View Product Button */}
               <Link
                 href={`/products/${product.id}`}
-                className="mt-auto inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2 text-white text-sm font-medium hover:bg-blue-700 transition"
+                className="mt-auto inline-flex items-center justify-center rounded-lg bg-black dark:bg-white border border-white dark:border-black px-5 py-2 text-white dark:text-black hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white transition"
               >
                 View Product →
               </Link>
