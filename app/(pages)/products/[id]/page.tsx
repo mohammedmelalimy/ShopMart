@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Product } from '@/app/types/index';
+import Image from 'next/image';
 
 type ParamsType = {
   params: {
@@ -16,28 +17,19 @@ export default async function ProductPage({ params }: ParamsType) {
   return (
     <div className="container mx-auto max-w-3xl px-6 py-12">
       {/* Back Link */}
-      <Link
-        href="/products"
-        className="text-white hover:underline transition mb-6 inline-block"
-      >
+      <Link href="/products" className="text-white hover:underline transition mb-6 inline-block">
         ← Back to Products
       </Link>
 
       <article className="bg-black rounded-2xl border border-white shadow-md hover:shadow-lg transition duration-300 p-8">
         {/* Product ID */}
-        <span className="text-sm text-white">
-          Product #{data.id}
-        </span>
+        <span className="text-sm text-white">Product #{data.id}</span>
 
         {/* Product Title */}
-        <h1 className="text-3xl font-bold text-white mt-2 mb-6">
-          {data.title}
-        </h1>
+        <h1 className="text-3xl font-bold text-white mt-2 mb-6">{data.title}</h1>
 
         {/* Description */}
-        <p className="text-white leading-relaxed text-lg mb-8">
-          {data.description}
-        </p>
+        <p className="text-white leading-relaxed text-lg mb-8">{data.description}</p>
 
         {/* Details */}
         <div className="flex flex-col gap-2 text-white">
@@ -61,7 +53,7 @@ export default async function ProductPage({ params }: ParamsType) {
         {/* Images */}
         <div className="mt-6 flex gap-4 overflow-x-auto">
           {data.images.map((img) => (
-            <img
+            <Image
               key={img}
               src={img}
               alt={data.title}

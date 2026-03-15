@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Product } from '../../types/index';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Products'
@@ -15,12 +16,8 @@ export default async function ProductsPage() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-black dark:text-white">
-            Latest Products
-          </h1>
-          <p className="text-gray-700 dark:text-gray-300 mt-2">
-            Explore our newest products
-          </p>
+          <h1 className="text-4xl font-extrabold text-black dark:text-white">Latest Products</h1>
+          <p className="text-gray-700 dark:text-gray-300 mt-2">Explore our newest products</p>
         </div>
 
         {/* Products Grid */}
@@ -36,10 +33,13 @@ export default async function ProductsPage() {
               </span>
 
               {/* Product Image */}
-              <img
+              <Image
                 src={product.images[0]}
                 alt={product.title}
                 className="w-full h-48 object-cover rounded-lg mb-6 "
+                loading="lazy"
+                width={500}
+                height={500}
               />
 
               {/* Product Title */}
